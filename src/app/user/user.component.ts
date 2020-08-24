@@ -16,6 +16,11 @@ export class UserComponent {
   city: string;
 
   @Output()
-  onResetAgeBtnClick = new EventEmitter<number>();
+  ageChange = new EventEmitter<number>();
+
+  resetAge(): void {
+    this.age = 21;
+    this.ageChange.emit(this.age);
+  }
 
 }

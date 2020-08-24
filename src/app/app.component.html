@@ -1,4 +1,8 @@
 <div class="container">
-  <app-user (onResetAgeBtnClick)="setAge($event)" [age]="user.age" [city]="user.city" [username]="user.name"></app-user>
-  <button (click)="randomizeUserAge()">Change Age</button>
+  <div>
+    <h1>User in AppComponent</h1>
+    <p>{{user | json}}</p>
+    <button (click)="randomizeUserAge()">Change Age</button>
+  </div>
+  <app-user [(age)]="user.age" [city]="user.city" [username]="user.name"></app-user>
 </div>
