@@ -11,4 +11,8 @@ export class AppComponent {
     age: 21,
     city: 'Strasbourg'
   };
+
+  randomizeUserAge(): void {
+    this.user.age = Math.floor(Math.random() * 60) + 10;
+  }
 }
