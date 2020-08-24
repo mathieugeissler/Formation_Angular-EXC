@@ -7,7 +7,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let user of users">
+  <tr *ngFor="let user of users$ | async">
     <td><a [routerLink]="[user.name]">{{user.name}}</a></td>
     <td>{{user.age}}</td>
     <td>{{user.city}}</td>

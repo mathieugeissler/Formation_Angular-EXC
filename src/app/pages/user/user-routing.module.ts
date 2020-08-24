@@ -6,6 +6,7 @@ import { UsersPageComponent } from './users-page/users-page.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserByNameResolver } from '../../services/resolvers/user-by-name.resolver';
+import { UsersResolver } from '../../services/resolvers/users.resolver';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
       {
         path: '',
         component: UsersListComponent,
+        resolve: {
+          users: UsersResolver,
+        },
       },
       {
         path: 'new',
