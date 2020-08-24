@@ -12,7 +12,11 @@ export class AppComponent {
     city: 'Strasbourg'
   };
 
+  setAge(age: number): void {
+    this.user.age = age;
+  }
+
   randomizeUserAge(): void {
-    this.user.age = Math.floor(Math.random() * 60) + 10;
+    this.setAge(Math.floor(Math.random() * 60) + 10);
   }
 }

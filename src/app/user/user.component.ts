@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -14,4 +14,8 @@ export class UserComponent {
 
   @Input()
   city: string;
+
+  @Output()
+  onResetAgeBtnClick = new EventEmitter<number>();
+
 }
