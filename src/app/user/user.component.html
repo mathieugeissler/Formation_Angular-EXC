@@ -1,9 +1,19 @@
-<h1>UserComponent</h1>
+<h1 [ngClass]="{'is-odd': odd, 'is-even': !odd}">{{index}} UserComponent</h1>
 <p>username: {{username}}</p>
-<p>age: {{age}}</p>
-<p>city: {{city}}</p>
+<p>age: {{age}}
+  <span *ngIf="age >= 18; else childTpl">
+    C'est un adulte
+  </span>
+</p>
+<p>city: {{city}}
+  <span [ngSwitch]="city">
+    <span *ngSwitchCase="'Strasbourg'">(Il fait chaud)</span>
+    <span *ngSwitchCase="'Lille'">(Il pleut)</span>
+    <span *ngSwitchDefault>(Ville inconnue)</span>
+  </span>
+</p>
+
 <button (click)="resetAge()">Reset Age</button>
-
-<input #name type="text">
-<button (click)="name.focus()">focus name</button>
-
+<ng-template #childTpl>
+  <span>Ce n'est pas un adulte</span>
+</ng-template>

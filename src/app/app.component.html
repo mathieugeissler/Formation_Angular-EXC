@@ -1,8 +1,4 @@
 <div class="container">
-  <div>
-    <h1>User in AppComponent</h1>
-    <p>{{user | json}}</p>
-    <button (click)="randomizeUserAge()">Change Age</button>
-  </div>
-  <app-user [(age)]="user.age" [city]="user.city" [username]="user.name"></app-user>
+  <app-user *ngFor="let user of users; index as index; odd as odd" [(age)]="user.age" [city]="user.city"
+            [index]="index" [odd]="odd" [username]="user.name"></app-user>
 </div>

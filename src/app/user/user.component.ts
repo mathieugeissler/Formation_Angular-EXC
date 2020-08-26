@@ -18,6 +18,12 @@ export class UserComponent {
   @Output()
   ageChange = new EventEmitter<number>();
 
+  @Input()
+  index: number;
+
+  @Input()
+  odd: boolean;
+
   resetAge(): void {
     this.age = 21;
     this.ageChange.emit(this.age);
