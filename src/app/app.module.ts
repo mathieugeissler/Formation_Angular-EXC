@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { AppErrorHandler } from './services/app-error-handler';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PageNotFoundComponent],
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoggerModule.forRoot({
       level: NgxLoggerLevel.DEBUG,
     }),
+    AppRoutingModule,
   ],
   providers: [
     {
