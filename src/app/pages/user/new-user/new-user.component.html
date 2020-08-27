@@ -8,19 +8,19 @@
   <p>
     <mat-form-field appearance="standard">
       <mat-label>Age</mat-label>
-      <input name="age" matInput type="number" required />
+      <input formControlName="age" matInput type="number" required />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="standard">
       <mat-label>City</mat-label>
-      <input name="city" matInput type="text" />
+      <input formControlName="city" matInput type="text" />
     </mat-form-field>
   </p>
   <p class="send-btn">
     <button
       [disabled]="!userForm.valid"
-      (click)="createUser(userForm.value)"
+      (click)="createUser()"
       mat-button
       color="accent"
     >
