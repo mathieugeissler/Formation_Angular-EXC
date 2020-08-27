@@ -1,26 +1,24 @@
-import {User} from '../models/users/user';
+import { User } from '../models/users/user';
 
 export const UsersMock: Array<User> = [
   {
     name: 'John',
     age: 21,
-    city: 'Strasbourg'
+    city: 'Strasbourg',
   },
   {
     name: 'Alice',
     age: 30,
-    city: 'Paris'
+    city: 'Paris',
   },
   {
     name: 'Mike',
     age: 12,
-    city: 'Toulouse'
+    city: 'Toulouse',
   },
   {
     name: 'Sarah',
     age: 52,
-    city: 'Lille'
-  }
+    city: 'Lille',
+  },
 ];
-
-

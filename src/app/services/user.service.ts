@@ -1,15 +1,13 @@
-import {User} from '../models/users/user';
-import {UsersMock} from '../mocks/users';
-import {Injectable} from '@angular/core';
-import {NGXLogger} from 'ngx-logger';
+import { User } from '../models/users/user';
+import { UsersMock } from '../mocks/users';
+import { Injectable } from '@angular/core';
+import { NGXLogger } from 'ngx-logger';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
-  constructor(private log: NGXLogger) {
-  }
+  constructor(private log: NGXLogger) {}
 
   /**
    * Get all Users
@@ -25,7 +23,6 @@ export class UserService {
    */
   public getUserByUsername(username: string): User {
     this.log.debug('get user by username', username, this);
-    return UsersMock.find(u => u.name === username);
+    return UsersMock.find((u) => u.name === username);
   }
-
 }

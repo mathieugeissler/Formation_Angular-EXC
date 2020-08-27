@@ -1,11 +1,10 @@
-import {ErrorHandler, Injectable} from '@angular/core';
-import {NGXLogger} from 'ngx-logger';
+import { ErrorHandler, Injectable } from '@angular/core';
+import { NGXLogger } from 'ngx-logger';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppErrorHandler extends ErrorHandler {
-
   constructor(private logger: NGXLogger) {
     super();
   }
@@ -14,5 +13,4 @@ export class AppErrorHandler extends ErrorHandler {
     this.logger.error(error);
     super.handleError(error);
   }
-
 }
