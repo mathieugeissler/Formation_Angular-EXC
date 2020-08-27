@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class UserService {
   API_URL =
-    'https://v2-api.sheety.co/b4f57d83b0ba4c9e62c19bc5c3061ac2/angularUsersBackend/users';
+    'https://v2-api.sheety.co/9f034e8ff4a8b707a5beea1317ef41b5/usersApi/users';
 
   constructor(private log: NGXLogger, private httpClient: HttpClient) {}
 
@@ -39,5 +39,12 @@ export class UserService {
         return user;
       })
     );
+  }
+
+  /**
+   * Create new user
+   */
+  createUser(newUser: User): Observable<User> {
+    return this.httpClient.post<User>(this.API_URL, { user: newUser });
   }
 }
