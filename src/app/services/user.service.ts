@@ -1,6 +1,7 @@
 import { User } from '../models/users/user';
 import { Injectable } from '@angular/core';
 import { NGXLogger } from 'ngx-logger';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
