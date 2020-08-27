@@ -1,1 +1,47 @@
-<p>edit-user works!</p>
+<form #form="ngForm" class="form" *ngIf="currentUser$ | async as user">
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input
+        name="name"
+        [(ngModel)]="user.name"
+        matInput
+        type="text"
+        required
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Age</mat-label>
+      <input
+        name="age"
+        [(ngModel)]="user.age"
+        matInput
+        type="number"
+        required
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>City</mat-label>
+      <input
+        name="city"
+        [(ngModel)]="user.city"
+        matInput
+        type="text"
+      />
+    </mat-form-field>
+  </p>
+  <p class="send-btn">
+    <button
+      [disabled]="!form.valid"
+      (click)="updateUser(form.value)"
+      mat-button
+      color="accent"
+    >
+      Save
+    </button>
+  </p>
+</form>
