@@ -1,18 +1,29 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>City</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users$ | async">
-      <td>
-        <a [routerLink]="[user.name]">{{ user.name }}</a>
-      </td>
-      <td>{{ user.age }}</td>
-      <td>{{ user.city }}</td>
-    </tr>
-  </tbody>
-</table>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Users
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="card-content">
+    <mat-table [dataSource]="users$ | async" class="table">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+        <mat-cell *matCellDef="let element"><a [routerLink]="[element.name]" mat-button> {{element.name}} </a>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef> Age</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef> City</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

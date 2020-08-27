@@ -1,6 +1,19 @@
-<blockquote>
-  <h1>{{ user.name }}, {{ user.city }}</h1>
-  <p>
-    <em>Age : {{ user.age }}</em>
-  </p>
-</blockquote>
+<mat-card class="user-card">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <mat-icon aria-hidden="false" aria-label="Example user icon" class="avatar">face</mat-icon>
+    </div>
+    <mat-card-title>{{user.name}}</mat-card-title>
+    <mat-card-subtitle>{{user.age}} ans</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="city">
+      <mat-icon aria-hidden="false" aria-label="Example user icon">home</mat-icon>
+      City : {{user.city}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <a [routerLink]="['edit']" mat-button>EDIT</a>
+    <button mat-button color="warn">DELETE</button>
+  </mat-card-actions>
+</mat-card>

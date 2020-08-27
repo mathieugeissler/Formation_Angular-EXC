@@ -8,6 +8,8 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { AppErrorHandler } from './services/app-error-handler';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PageNotFoundComponent],
@@ -18,6 +20,8 @@ import { AppRoutingModule } from './app.routing.module';
       level: NgxLoggerLevel.DEBUG,
     }),
     AppRoutingModule,
+    BrowserAnimationsModule,
+    UiModule,
   ],
   providers: [
     {

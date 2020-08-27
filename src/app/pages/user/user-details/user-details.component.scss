@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  justify-content: center;
+
+  .user-card {
+    margin-top: 15px;
+    width: 50%;
+
+    .avatar {
+      font-size: 40px;
+    }
+
+    .city {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      mat-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+}

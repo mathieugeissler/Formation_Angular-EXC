@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 export class UsersListComponent implements OnInit {
   public users$: Observable<Array<User>>;
   private users: Array<User>;
+  public displayedColumns = ['name', 'age', 'city'];
 
   constructor(private route: ActivatedRoute) {}
 
