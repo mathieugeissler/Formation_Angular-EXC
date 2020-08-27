@@ -1,0 +1,30 @@
+<form [formGroup]="userForm" class="form">
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput type="text" required />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Age</mat-label>
+      <input name="age" matInput type="number" required />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>City</mat-label>
+      <input name="city" matInput type="text" />
+    </mat-form-field>
+  </p>
+  <p class="send-btn">
+    <button
+      [disabled]="!userForm.valid"
+      (click)="createUser(userForm.value)"
+      mat-button
+      color="accent"
+    >
+      Create
+    </button>
+  </p>
+</form>

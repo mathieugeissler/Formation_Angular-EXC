@@ -12,6 +12,8 @@ export class UserService {
   API_URL =
     'https://v2-api.sheety.co/b4f57d83b0ba4c9e62c19bc5c3061ac2/angularUsersBackend/users';
 
+  isLoggedIn = false;
+
   constructor(private log: NGXLogger, private httpClient: HttpClient) {}
 
   /**
